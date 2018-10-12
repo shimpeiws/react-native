@@ -148,7 +148,7 @@
     "react": "16.6.0-alpha.8af6728"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "7.0.0-beta.55",
     "absolute-path": "^0.0.0",
     "art": "^0.10.0",
     "base64-js": "^1.1.2",
