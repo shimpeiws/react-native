@@ -251,7 +251,12 @@ RCT_EXPORT_MODULE()
 
 - (void)handleRemoteNotificationsRegistered:(NSNotification *)notification
 {
-  [self sendEventWithName:@"remoteNotificationsRegistered" body:notification.userInfo];
+  [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(doRemoteNotificationsRegistered:) userInfo:notification.userInfo repeats:NO];
+}
+
+- (void) doRemoteNotificationsRegistered:(NSTimer*)theTimer
+{
+  [self sendEventWithName:@"remoteNotificationsRegistered" body:(NSString*)[theTimer userInfo]];
 }
 
 - (void)handleRemoteNotificationRegistrationError:(NSNotification *)notification
